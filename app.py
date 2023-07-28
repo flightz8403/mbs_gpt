@@ -4,6 +4,37 @@ import json
 
 st.title('MBS GPT')
 
+if 'clicked' not in st.session_state:
+    st.session_state.clicked = False
+
+def thumbsup(prompt, result):
+    st.session_state.clicked = True
+    feedback_url = 'http://mbs.top-boss.com:1269/gpt/feedback'
+
+    params = json.dumps({
+        "data": {
+            "prompt": prompt,
+            "result": result,
+            "type": 'mbs',
+            "feedback": 1
+        }
+    })
+    response = requests.request("POST", feedback_url, data=params)
+
+def thumbsdown(prompt, result):
+    st.session_state.clicked = True
+    feedback_url = 'http://mbs.top-boss.com:1269/gpt/feedback'
+
+    params = json.dumps({
+        "data": {
+            "prompt": prompt,
+            "result": result,
+            "type": 'mbs',
+            "feedback": -1
+        }
+    })
+    response = requests.request("POST", feedback_url, data=params)
+    
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -51,5 +82,12 @@ if prompt := st.chat_input("Ask a question"):
         st.markdown(result)
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": result})
+
+    # Add feedback loop
+    col1, col2, col3, col4, col5, col6, c7, c8 = st.columns(8)    
+    with col2: 
+        st.button(':thumbsdown:', on_click=thumbsdown, args=[prompt, result])
+    with col3:
+        st.button(':thumbsup:', on_click=thumbsup, args=[prompt, result])
 
     
