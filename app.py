@@ -8,7 +8,7 @@ st.title('MBS GPT')
 if "messages" not in st.session_state:
     st.session_state.messages = []
     with st.chat_message("assistant"):
-        st.markdown("欢迎使用我们的企业案例生成与分析软件学员进阶手册！<br>本手册包含了详细的操作说明和决策简表，帮助您更好地使用MBS云端仿真系统。祝您使用愉快！")
+        st.markdown("欢迎使用我们的企业案例生成与分析软件学员进阶手册！本手册包含了详细的操作说明和决策简表，帮助您更好地使用MBS云端仿真系统。祝您使用愉快！")
 
 chatpdf_api_key = st.secrets["CHATPDF_API_KEY"]
 chatpdf_source_id = st.secrets["CHATPDF_SOURCE_ID"]
