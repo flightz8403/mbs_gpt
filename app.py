@@ -43,17 +43,17 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
     with st.chat_message("assistant"):
         if lang == "zh_cn":
-            st.markdown("欢迎使用 MBS GPT！ 请询问任何有关MBS模拟系统的问题！")
+            st.markdown("很乐意为您说明有关于MBS模拟经营相关的问题，不过可能因为不了解您的问题，或是资料库没有准确的答案，或是AI技术的限制，我的回答请当作是参考，最好和您的同侪或是老师再次确认，感谢您的体谅。欢迎使用 MBS GPT！")
         elif lang == "zh_tw":
-            st.markdown("歡迎使用 MBS GPT！ 請詢問任何有關MBS模擬系統的問題！")
+            st.markdown("很樂意為您說明有關於MBS模擬經營相關的問題，不過可能因為不瞭解您的問題，或是資料庫沒有準確的答案，或是AI技術的限制，我的回答請當作是參考，最好和您的同儕或是老師再次確認，感謝您的體諒。歡迎使用 MBS GPT！")
         elif lang == "en":
-            st.markdown("Welcome to MBS GPT! Please ask any question you have regarding MBS simulation system!")
+            st.markdown("I am happy to explain to you the questions related to MBS business simulation, but it maybe because I do not understand your question, or the database does not have an accurate answer, or the limitation of AI technology, please take my answer as a reference, it is best to confirm with your peers or teachers, thank you for your understanding. Welcome to MBS GPT!")
         elif lang == "jp":
-            st.markdown("MBS GPTへようこそ！ MBSシミュレーションシステムに関するご質問は何でもご質問ください！")
+            st.markdown("MBS経営シミュレーションに関するご質問については、喜んでご説明させていただきますが、ご質問の内容が理解できなかったり、データベースに正確な回答がなかったり、AI技術の限界があったりするため、私の回答を参考にしていただければと思います。 、同僚や先生に確認するのが最善です、ご理解いただきありがとうございます。 MBS GPTへようこそ！")
         elif lang == "th":
-            st.markdown("ยินดีต้อนรับสู่ MBS GPT! โปรดถามคำถามใด ๆ ที่คุณมีเกี่ยวกับระบบจำลอง MBS!")
+            st.markdown("ฉันยินดีที่จะอธิบายให้คุณทราบเกี่ยวกับคำถามที่เกี่ยวข้องกับการจำลองธุรกิจ MBS แต่อาจเป็นเพราะฉันไม่เข้าใจคำถามของคุณ หรือฐานข้อมูลไม่มีคำตอบที่ถูกต้อง หรือข้อจำกัดของเทคโนโลยี AI โปรดใช้คำตอบของฉันเป็นข้อมูลอ้างอิง เป็นการดีที่สุดที่จะยืนยันกับเพื่อนหรือครูของคุณ ขอขอบคุณสำหรับความเข้าใจของคุณ ยินดีต้อนรับสู่ MBS GPT!")
         elif lang == "id":
-            st.markdown("Selamat datang di MBS GPT! Silakan ajukan pertanyaan apa pun yang Anda miliki tentang sistem simulasi MBS!")
+            st.markdown("Saya dengan senang hati menjelaskan kepada Anda pertanyaan terkait simulasi bisnis MBS, tetapi mungkin karena saya tidak memahami pertanyaan Anda, atau database tidak memiliki jawaban yang akurat, atau keterbatasan teknologi AI, harap ambil jawaban saya sebagai referensi. , sebaiknya konfirmasi dengan teman atau guru, terima kasih atas pengertiannya. Selamat datang di MBS GPT!")
 
 chatpdf_api_key = st.secrets["CHATPDF_API_KEY"]
 chatpdf_source_id = st.secrets["CHATPDF_SOURCE_ID"]
