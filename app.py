@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import json
 
-st.title('MBS GPT')
+st.title('SA GPT')
 
 url_params = st.experimental_get_query_params()
 lang = url_params["lang"][0]
