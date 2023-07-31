@@ -4,6 +4,9 @@ import json
 
 st.title('MBS GPT')
 
+url_params = st.experimental_get_query_params()
+lang = url_params["lang"][0]
+
 if 'clicked' not in st.session_state:
     st.session_state.clicked = False
 
@@ -39,7 +42,18 @@ def thumbsdown(prompt, result):
 if "messages" not in st.session_state:
     st.session_state.messages = []
     with st.chat_message("assistant"):
-        st.markdown("欢迎使用我们的企业案例生成与分析软件学员进阶手册！本手册包含了详细的操作说明和决策简表，帮助您更好地使用MBS云端仿真系统。祝您使用愉快！")
+        if lang == "zh_cn":
+            st.markdown("欢迎使用 MBS GPT！ 请询问任何有关MBS模拟系统的问题！")
+        elif lang == "zh_tw":
+            st.markdown("歡迎使用 MBS GPT！ 請詢問任何有關MBS模擬系統的問題！")
+        elif lang == "en":
+            st.markdown("Welcome to MBS GPT! Please ask any question you have regarding MBS simulation system!")
+        elif lang == "jp":
+            st.markdown("MBS GPTへようこそ！ MBSシミュレーションシステムに関するご質問は何でもご質問ください！")
+        elif lang == "th":
+            st.markdown("ยินดีต้อนรับสู่ MBS GPT! โปรดถามคำถามใด ๆ ที่คุณมีเกี่ยวกับระบบจำลอง MBS!")
+        elif lang == "id":
+            st.markdown("Selamat datang di MBS GPT! Silakan ajukan pertanyaan apa pun yang Anda miliki tentang sistem simulasi MBS!")
 
 chatpdf_api_key = st.secrets["CHATPDF_API_KEY"]
 chatpdf_source_id = st.secrets["CHATPDF_SOURCE_ID"]
