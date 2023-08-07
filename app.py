@@ -43,9 +43,9 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
     with st.chat_message("assistant"):
         if lang == "chs":
-            st.markdown("很乐意为您说明有关于MBS模拟经营相关的问题，不过可能因为不了解您的问题，或是资料库没有准确的答案，或是AI技术的限制，我的回答请当作是参考，最好和您的同侪或是老师再次确认，感谢您的体谅。欢迎使用 SCM GPT！")
+            st.markdown("很乐意为您说明有关于SCM模拟经营相关的问题，不过可能因为不了解您的问题，或是资料库没有准确的答案，或是AI技术的限制，我的回答请当作是参考，最好和您的同侪或是老师再次确认，感谢您的体谅。欢迎使用 SCM GPT！")
         elif lang == "cht":
-            st.markdown("很樂意為您說明有關於MBS模擬經營相關的問題，不過可能因為不瞭解您的問題，或是資料庫沒有準確的答案，或是AI技術的限制，我的回答請當作是參考，最好和您的同儕或是老師再次確認，感謝您的體諒。歡迎使用 SCM GPT！")
+            st.markdown("很樂意為您說明有關於SCM模擬經營相關的問題，不過可能因為不瞭解您的問題，或是資料庫沒有準確的答案，或是AI技術的限制，我的回答請當作是參考，最好和您的同儕或是老師再次確認，感謝您的體諒。歡迎使用 SCM GPT！")
         elif lang == "en":
             st.markdown("I am happy to explain to you the questions related to SCM business simulation, but it maybe because I do not understand your question, or the database does not have an accurate answer, or the limitation of AI technology, please take my answer as a reference, it is best to confirm with your peers or teachers, thank you for your understanding. Welcome to SCM GPT!")
         elif lang == "jp":
