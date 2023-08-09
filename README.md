@@ -1,2 +1,2 @@
-# mbs_gpt
-MBS GPT using ChatPDF api as backend
+# SRM GPT
+SRM GPT using ChatPDF api as backend
