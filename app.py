@@ -1,11 +1,16 @@
 import streamlit as st
+import openai
 import requests
 import json
 
+
 st.title('MBS GPT')
 
-url_params = st.experimental_get_query_params()
-lang = url_params["lang"][0]
+# url_params = st.query_params
+if 'lang' not in st.query_params:
+    lang = 'en'
+else:
+    lang = st.query_params["lang"][0]
 
 if 'clicked' not in st.session_state:
     st.session_state.clicked = False
