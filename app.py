@@ -17,7 +17,7 @@ url_params = st.query_params
 if 'lang' not in st.query_params:
     lang = 'en'
 else:
-    lang = st.query_params["lang"][0]
+    lang = st.query_params["lang"]
 
 if 'clicked' not in st.session_state:
     st.session_state.clicked = False
