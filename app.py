@@ -13,7 +13,7 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "gpt-3.5-turbo"
 
-# url_params = st.query_params
+url_params = st.query_params
 if 'lang' not in st.query_params:
     lang = 'en'
 else:
