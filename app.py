@@ -116,6 +116,8 @@ if prompt := st.chat_input("Ask a question"):
             # with col3:
             #    st.button(':thumbsup:', on_click=thumbsup, args=[prompt, result])
 
+            thumbsup(prompt, "")
+            
         else:
 
             result = "No response from the model."
